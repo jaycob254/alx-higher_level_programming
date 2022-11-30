@@ -1,12 +1,23 @@
 #!/usr/bin/node
-
-const SquareOne = require('./5-square');
-
-module.exports = class Square extends SquareOne {
-  charPrint (char) {
-    const c = char || 'X';
-    let a = c.repeat(this.width) + '\n';
-    a = a.repeat(this.height);
-    console.log(a.slice(0, -1));
+/*
+    Class Square
+    inherit from Rectangle
+    create a charPrint(c) method
+*/
+class Square extends require('./5-square.js') {
+  constructor (size) {
+    super(size, size);
   }
-};
+
+  charPrint (c) {
+    if (typeof c === 'undefined') {
+      this.print();
+    } else {
+      for (let height = 0; height < this.height; height++) {
+        console.log(c.repeat(this.width));
+      }
+    }
+  }
+}
+
+module.exports = Square;
