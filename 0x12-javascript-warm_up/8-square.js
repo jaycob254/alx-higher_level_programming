@@ -17,4 +17,3 @@ for (let i = 0; i < inputSize; i++) {
     squareIndicator += '\n';
   }
 }
-console.log(squareIndicator);
